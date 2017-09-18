@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # create node for server
+  config.vm.define :node do |node_config|
+    node_config.vm.box = "ubuntu/trusty64"
+    node_config.vm.hostname = "spring-boot-ansible"
+    node_config.vm.network :private_network, ip: "10.10.10.11"
+    node_config.vm.provider "virtualbox" do |vb|
+      vb.memory = "1024"
+      vb.name = "spring_boot_ansible_vm"
+    end
+  end
+
+end
