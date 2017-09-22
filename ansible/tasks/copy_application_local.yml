@@ -1,0 +1,2 @@
+- name: "copy local spring boot file"
+  copy: src=../target/spring-boot-ansible-0.0.1-SNAPSHOT.jar dest=/home/spring-boot-ansible/spring-boot-ansible.jar force=True

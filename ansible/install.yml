@@ -7,3 +7,18 @@
     - role: geerlingguy.java
       java_packages:
         - java-1.8.0-openjdk
+
+  tasks:
+   - name: "create spring-boot-ansible group"
+     group:
+       name: spring-boot-ansible
+
+   - name: "create spring-boot-ansible user"
+     user:
+       name: spring-boot-ansible
+       group: spring-boot-ansible
+       comment: "user for application spring-boot-ansible"
+
+   - name: "copy jar file"
+     include: "tasks/copy_application_local.yml"
+
