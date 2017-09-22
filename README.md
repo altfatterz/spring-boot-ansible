@@ -1,14 +1,24 @@
-When re-creating the Vagrant image you will need to remove the key fingerprint from your
-`~/.ssh/known_hosts` file
+Creates a VM image and installs java8 on it.
 
 ```bash
-ansible all -m ping --ask-pass
+vagrant up
 ```
+
+Ping:
+
+```bash
+ansible spring-boot-ansible -m ping --ask-pass
+```
+
+Install playbook manually:
 
 ```bash
 ansible-playbook install.yml --ask-pass
 ```
 
+To force provisioning again if the machine is up already:
 ```bash
-ansible-playbook install-with-role.yml --ask-pass
+vagrant provision
 ```
+
+

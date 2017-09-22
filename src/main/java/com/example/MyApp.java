@@ -1,5 +1,6 @@
 package com.example;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,14 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class SpringBootAnsibleApplication {
+@Slf4j
+public class MyApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootAnsibleApplication.class, args);
+		SpringApplication.run(MyApp.class, args);
 	}
 
 	@GetMapping("/")
 	public String helloWorld() {
+		log.info("Hello World");
 		return "Hello World";
 	}
 
