@@ -5,5 +5,7 @@
 
   tasks:
 
-  - name: install ntp
-    apt: name=ntp state=installed update_cache=yes
+  - name: Ensure NTP-related packages are installed.
+    package:
+      name: ntp
+      state: present
