@@ -1,11 +1,9 @@
 ---
-- hosts: spring-boot-ansible
+- hosts: all
   become: yes
-  gather_facts: no
+  gather_facts: yes
 
-  tasks:
-
-  - name: Ensure NTP-related packages are installed.
-    package:
-      name: ntp
-      state: present
+  roles:
+    - role: geerlingguy.java
+      java_packages:
+        - java-1.8.0-openjdk
