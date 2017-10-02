@@ -1,1 +1,6 @@
-foo: bar
+spring:
+  application:
+    url: jdbc:postgresql://localhost:5432/ansible
+    username: spring
+    password: spring
+    driver-class-name: org.postgresql.Driver

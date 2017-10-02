@@ -1,3 +1,24 @@
+Install ansible
+
+```bash
+brew install ansible
+```
+
+Install dependencies:
+
+```bash
+ansible-galaxy install -r requirements.yml
+```
+
+Verify that dependencies were installed:
+
+```bash
+ansible-galaxy list
+
+- ansible-role-java, 1.7.4
+- ansible-role-postgresql, 1.3.1
+```
+
 Creates a VM image and installs java8 on it.
 
 ```bash
