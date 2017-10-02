@@ -45,3 +45,4 @@ journalctl -f -u spring-boot-ansible.service
 Resources:
 https://techdev.io/en/developer-blog/jvm-applications-as-a-service-with-systemd
 https://github.com/pellepelster/ansible-springboot-role
+http://codeboje.de/spring-boot-info-actuator/

@@ -26,7 +26,7 @@
      file: path=/home/spring-boot-ansible/spring-boot-ansible.jar owner=spring-boot-ansible group=spring-boot-ansible mode=0755
 
    - name: "create configuration"
-     template: src=spring-boot-ansible.yml.j2 dest=/home/spring-boot-ansible/spring-boot-ansible.yml owner=spring-boot-ansible group=spring-boot-ansible
+     template: src=spring-boot-ansible.conf.j2 dest=/home/spring-boot-ansible/spring-boot-ansible.conf owner=spring-boot-ansible group=spring-boot-ansible
 
    - name: "create systemd unit configuration"
      template:
