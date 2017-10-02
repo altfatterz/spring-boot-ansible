@@ -36,9 +36,15 @@ systemctl status spring-boot-ansible
 Check the logs:
 
 ```bash
-journalctl -f -u spring-boot-ansible.service
+journalctl -n 1000 -f -u spring-boot-ansible.service
 ```
 
+Create postgresql schema
+```bash
+$ createdb demo
+$ CREATE USER spring WITH PASSWORD 'spring';
+$ GRANT ALL PRIVILEGES ON DATABASE demo to spring;
+```
 
 
 

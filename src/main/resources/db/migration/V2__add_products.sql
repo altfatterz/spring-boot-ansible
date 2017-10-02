@@ -1,0 +1,1 @@
+INSERT INTO products (id, name) VALUES (1, 'GoPro');
