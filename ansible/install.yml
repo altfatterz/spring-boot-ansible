@@ -19,6 +19,22 @@
        group: spring-boot-ansible
        comment: "user for application spring-boot-ansible"
 
-   - name: "copy jar file"
-     include: "tasks/copy_application_local.yml"
+   - name: "copy the jar artifact"
+     copy: src=../target/spring-boot-ansible-0.0.1-SNAPSHOT.jar dest=/home/spring-boot-ansible/spring-boot-ansible.jar force=True
 
+   - name: "set the jar artifact file permissions"
+     file: path=/home/spring-boot-ansible/spring-boot-ansible.jar owner=spring-boot-ansible group=spring-boot-ansible mode=0755
+
+   - name: "create configuration"
+     template: src=spring-boot-ansible.yml.j2 dest=/home/spring-boot-ansible/spring-boot-ansible.yml owner=spring-boot-ansible group=spring-boot-ansible
+
+   - name: "create systemd unit configuration"
+     template:
+       src: spring-boot-ansible.conf.j2
+       dest: /etc/systemd/system/spring-boot-ansible.service
+
+   - name: "enable the service"
+     service: name=spring-boot-ansible enabled=yes
+
+   - name: "start the service"
+     service: name=spring-boot-ansible state=restarted
