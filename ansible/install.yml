@@ -30,7 +30,7 @@
 
    - name: "create systemd unit configuration"
      template:
-       src: spring-boot-ansible.conf.j2
+       src: systemd.conf.j2
        dest: /etc/systemd/system/spring-boot-ansible.service
 
    - name: "enable the service"
