@@ -4,9 +4,9 @@
   gather_facts: yes
 
   roles:
-    - role: ansible-role-postgresql
+    - role: geerlingguy.postgresql
 
-    - role: ansible-role-java
+    - role: geerlingguy.java
       java_packages:
         - java-1.8.0-openjdk
 
