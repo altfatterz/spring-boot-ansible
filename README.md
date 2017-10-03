@@ -41,7 +41,6 @@ To force provisioning again if the machine is up already:
 vagrant provision
 ```
 
-
 Start the service:
 
 ```bash
@@ -66,6 +65,11 @@ $ CREATE USER spring WITH PASSWORD 'spring';
 $ GRANT ALL PRIVILEGES ON DATABASE demo to spring;
 ```
 
+
+Connect to postgresql from the batch server  
+```
+psql --dbname demo --username spring --password
+```
 
 
 Resources:
