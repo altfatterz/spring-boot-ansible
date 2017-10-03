@@ -5,10 +5,6 @@ spring:
   # disable database initialisation with Spring JDBC, enabled by default
   datasource:
     initialize: false
-    url: jdbc:postgresql://localhost:5432/demo
-    username: spring
-    password: spring
-    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate.ddl-auto: validate
@@ -17,13 +13,11 @@ management:
   security:
     enabled: false
 
-
 info:
   app:
     groupId: @project.groupId@
     artifactId: @project.artifactId@
     version: @project.version@
-
 
 flyway:
   enabled: true

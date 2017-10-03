@@ -60,9 +60,9 @@ journalctl -n 1000 -f -u spring-boot-ansible.service
 
 Create postgresql schema
 ```bash
-$ createdb demo
-$ CREATE USER spring WITH PASSWORD 'spring';
-$ GRANT ALL PRIVILEGES ON DATABASE demo to spring;
+$ createdb local_db
+$ CREATE USER local_user WITH PASSWORD 'local_user';
+$ GRANT ALL PRIVILEGES ON DATABASE local_db to local_user;
 ```
 
 
@@ -70,7 +70,6 @@ Connect to postgresql from the batch server
 ```
 psql --dbname demo --username spring --password
 ```
-
 
 Resources:
 https://techdev.io/en/developer-blog/jvm-applications-as-a-service-with-systemd

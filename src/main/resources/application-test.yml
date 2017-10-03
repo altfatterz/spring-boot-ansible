@@ -1,6 +1,6 @@
 spring:
-  application:
-    url: jdbc:postgresql://localhost:5432/ansible
-    username: spring
-    password: spring
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test_db
+    username: test_user
+    password: test_user
     driver-class-name: org.postgresql.Driver
