@@ -1,13 +1,17 @@
 Vagrant.configure("2") do |config|
 
-  # disable inserting auto generated insecure key
+  # Ensure we use our vagrant private key
+  # It still gives:
+  # node: Warning: Remote connection disconnect. Retrying...
+  # node: Warning: Connection reset. Retrying...
   config.ssh.insert_key = false
+  config.ssh.private_key_path = '~/.vagrant.d/insecure_private_key'
 
   # create node for server
   config.vm.define :node do |node_config|
     node_config.vm.box = "geerlingguy/centos7"
     node_config.vm.hostname = "spring-boot-ansible"
-    node_config.vm.network :private_network, type: "dhcp"
+    node_config.vm.network :private_network, ip: '192.168.50.4'
     node_config.vm.network "forwarded_port", guest: 5432, host: 6432
     node_config.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
